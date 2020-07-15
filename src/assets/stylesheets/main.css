@@ -1,5 +1,66 @@
+body {
+  background-color: #222831;
+}
 .app-wrapper {
   height: 100vh;
   width: 100vw;
-  background-color: #222831;
+}
+
+.weather__app-wrapper {
+  max-width: 800px;
+  background-color: transparent;
+  margin: auto;
+  display: flex;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 767px) {
+  .weather__app-wrapper {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.today__weather-wrapper,
+.stats__weather-wrapper {
+  height: 500px;
+  width: 400px;
+}
+
+.today__weather-wrapper {
+  background-color: #82c6e5;
+  border-radius: 10px 0 0 10px;
+}
+.stats__weather-wrapper {
+  background-color: #343d4b;
+  border-radius: 0 10px 10px 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .app-wrapper {
+    height: auto;
+    margin: 2rem 0;
+    position: relative;
+    width: 100%;
+  }
+  .weather__app-wrapper {
+    flex-direction: column;
+  }
+
+  .today__weather-wrapper,
+  .stats__weather-wrapper {
+    height: 300px;
+    width: 80%;
+    border-radius: 10px;
+    margin: 0.7rem auto 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .today__weather-wrapper,
+  .stats__weather-wrapper {
+    margin: 0.7rem 0.7rem 0;
+    width: 90%;
+  }
 }
