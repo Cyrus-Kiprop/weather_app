@@ -81,7 +81,9 @@ const cityNotFound = () => {
 
 function fetchDetails(cityName = 'Nairobi') {
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}`;
-  fetch(url)
+  fetch(url, {
+    mode: 'cors',
+  })
     .then((response) => response.json())
     .then((result) => Db(result))
     .catch(() => {
