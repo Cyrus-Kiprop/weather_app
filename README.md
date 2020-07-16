@@ -13,11 +13,11 @@
   <p align="center">
     A weather App created in the fulfillment of Microverse mandatory Javascript restaurant project.
     <br />
-    <a href="https://afritrend.herokuapp.com/users/sign_in">View Demo</a>
+    <a href="https://raw.githack.com/Cyrus-Kiprop/weather_app/gh-pages/index.html">View Demo</a>
     ·
-    <a href="https://github.com/Cyrus-Kiprop/afriTrend/issues">Report Bug</a>
+    <a href="https://github.com/Cyrus-Kiprop/weather_app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Cyrus-Kiprop/afriTrend/issues">Request Feature</a>
+    <a href="https://github.com/Cyrus-Kiprop/weather_app/issues">Request Feature</a>
   </p>
 </p>
 
@@ -42,7 +42,7 @@
 
 ## About The Project
 
-![](/src/assets/app-demo.gif)
+![](./images/app-demo.gif)
 
 The app is built using native javascript api for manipulating the DOM. The main aim of this app was to aquaint the learner with DOM manipulation skills using vanilla Javascript. The site is a single pager where a user can stay up date with weather forecasts
 
@@ -51,11 +51,7 @@ Home (Landing Page)
 ```
 
 - This is also the landing page.
-  ![](./images/home.png)
-
-```sh
-About Section
-```
+  ![](./src/assets/images/)
 
 ## Live Demo
 
