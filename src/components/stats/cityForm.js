@@ -1,10 +1,13 @@
+/* eslint-disable import/no-cycle */
 import utils from '../UxUtils';
+import fetchDetails from '../fetchData';
 
 const { make } = utils;
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  console.log('submitted');
+
+  fetchDetails(document.getElementById('search-city').value.toLowerCase());
 };
 
 function cityForm() {
