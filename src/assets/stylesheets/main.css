@@ -5,6 +5,9 @@ body {
   background-color: #343d4b;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  background-image: url(../images/background-container.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .app-wrapper {
   height: 100vh;
@@ -216,5 +219,30 @@ body {
       rgba(81, 81, 229, 0.5) 100%
     ) !important;
   background-position: center;
+}
 
+.not-found {
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  font-weight: 700;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.not-found > span {
+  display: flex;
+  align-items: center;
+}
+
+.not-found i {
+  color: pink;
+  margin-left: 1rem;
 }

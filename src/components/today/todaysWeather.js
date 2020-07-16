@@ -27,6 +27,10 @@ function todaysTemp(temp, weatherDesc) {
 
 const updateBackground = (weather) => {
   const element = document.getElementsByClassName('today__weather-wrapper')[0];
+
+  const weatherIcon = document.getElementsByClassName('temp-icon')[0];
+  console.log(weatherIcon);
+
   const arr = ['clouds', 'rainy', 'sunny'];
   arr.forEach((weatherClass) => {
     element.classList.remove(weatherClass);
