@@ -24,8 +24,9 @@ function cityForm() {
   const btn = make('button', 'btn', form, {
     type: 'submit',
   });
+  make('i', 'fa fa-search', btn);
 
-  btn.appendChild(document.createTextNode('Submit'));
+  // btn.appendChild(document.createTextNode('Submit'));
   return form;
 }
 
