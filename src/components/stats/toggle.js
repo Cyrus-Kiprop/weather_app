@@ -9,7 +9,6 @@ const handleToggle = (event) => {
 
   const toggleDisplay = (nodelist) => {
     Array.from(nodelist).forEach((node) => {
-      console.log(node);
       node.classList.toggle('d-none');
     });
   };
@@ -27,7 +26,7 @@ const toggle = () => {
     checked: true,
   });
   const labelOne = make('label', 'form-check-label', divOne);
-  labelOne.appendChild(document.createTextNode('&#8451;'));
+  labelOne.appendChild(document.createTextNode('°C'));
 
   const divTwo = make('div', 'form-check');
   const formCheckTwo = make('input', 'form-check-input', divTwo, {
@@ -36,7 +35,7 @@ const toggle = () => {
     name: 'choice',
   });
   const labelTwo = make('label', 'form-check-label', divTwo);
-  labelTwo.appendChild(document.createTextNode('&#8451;'));
+  labelTwo.appendChild(document.createTextNode('°F'));
 
   [formCheckOne, formCheckTwo].forEach((form) => {
     form.addEventListener('click', handleToggle);
