@@ -2,8 +2,33 @@ import utils from '../UxUtils';
 
 const { make, appendBulkChild } = utils;
 
+const helper = {
+  processTime(dt) {
+    const date = helper.convertMillToDate(dt);
+    return {
+      day: date.slice(0, 3),
+      time: new Date().toString().slice(16, 25),
+      month: date.slice(4, 7),
+      year: date.slice(11, 16),
+      tarehe: date.slice(8, 11),
+    };
+  },
+
+  updateAt(time) {
+    const updatedAt = make('span', 'time-wrapper');
+    updatedAt.appendChild(document.createTextNode(`Update At: ${time}`));
+    return updatedAt;
+  },
+
+  convertMillToDate(dt) {
+    return new Date(Number(`${dt.toString()}000`)).toString();
+  },
+};
+
 function dateTimeLocation(dt, city, country) {
-  const { day, time, month, year, tarehe } = helper.processTime(dt);
+  const {
+    day, time, month, year, tarehe,
+  } = helper.processTime(dt);
 
   const dateTimeWrapper = make('div', 'date_time-wrapper d-flex flex-column');
 
@@ -28,28 +53,5 @@ function dateTimeLocation(dt, city, country) {
   ]);
   return dateTimeWrapper;
 }
-
-const helper = {
-  processTime(dt) {
-    const date = helper.convertMillToDate(dt);
-    return {
-      day: date.slice(0, 3),
-      time: new Date().toString().slice(16, 25),
-      month: date.slice(4, 7),
-      year: date.slice(11, 16),
-      tarehe: date.slice(8, 11),
-    };
-  },
-
-  updateAt(time) {
-    const updatedAt = make('span', 'time-wrapper');
-    updatedAt.appendChild(document.createTextNode(`Update At: ${time}`));
-    return updatedAt;
-  },
-
-  convertMillToDate(dt) {
-    return new Date(Number(`${dt.toString()}000`)).toString();
-  },
-};
 
 export default dateTimeLocation;

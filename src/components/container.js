@@ -1,7 +1,7 @@
 import utils from './UxUtils';
 import weatherAppWrapper from './weatherDetailsWrapper';
 
-const { appendBulkchild, make } = utils;
+const { make } = utils;
 
 const container = make('div', 'app-wrapper');
 

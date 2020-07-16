@@ -1,6 +1,6 @@
 import utils from '../UxUtils';
 
-const { make, appendBulkChild } = utils;
+const { make } = utils;
 
 function stats(windSpeed, humidityValue, pressureValue, highValue, lowValue) {
   const statsWrapper = make('div', 'stats-container');
@@ -19,7 +19,9 @@ function stats(windSpeed, humidityValue, pressureValue, highValue, lowValue) {
 
   const wind = make('div', 'stats-item', statsWrapper);
   make('span', '', wind).appendChild(document.createTextNode('wind'));
-  make('span', '', wind).appendChild(document.createTextNode(`${windSpeed} Km/hr`));
+  make('span', '', wind).appendChild(
+    document.createTextNode(`${windSpeed} Km/hr`),
+  );
 
   const tempHighLow = make('div', '', statsWrapper);
 

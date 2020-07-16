@@ -17,7 +17,9 @@ const helper = {
 };
 
 function Db(dataObj) {
-  const { main, sys, wind, weather, name, dt } = dataObj;
+  const {
+    main, sys, wind, weather, name, dt,
+  } = dataObj;
   const data = {
     main,
     sys,
@@ -33,11 +35,11 @@ function Db(dataObj) {
 
   // update the UI
   const todayWrapper = document.getElementsByClassName(
-    'today__weather-wrapper'
+    'today__weather-wrapper',
   )[0];
 
   const statsWrapper = document.getElementsByClassName(
-    'stats__weather-wrapper'
+    'stats__weather-wrapper',
   )[0];
 
   helper.resetPage([todayWrapper, statsWrapper]);
@@ -53,15 +55,17 @@ function Db(dataObj) {
       main.humidity,
       main.pressure,
       main.temp_max,
-      main.temp_min
+      main.temp_min,
     ),
     cityForm(),
     toggle(),
   ]);
 }
 
-const updateUI = (data) => {
-  dateTimeLocation(data);
+const tryAgain = (event) => {
+  const { target } = event;
+  const parent = target.parentNode.parentNode;
+  parent.classList.add('d-none');
 };
 
 const cityNotFound = () => {
@@ -75,21 +79,14 @@ const cityNotFound = () => {
   return notFound;
 };
 
-const tryAgain = (event) => {
-  const { target } = event;
-  const parent = target.parentNode.parentNode;
-  parent.classList.add('d-none');
-};
-
 function fetchDetails(cityName = 'Nairobi') {
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKEY}`;
   fetch(url)
     .then((response) => response.json())
     .then((result) => Db(result))
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       const wrapper = document.getElementsByClassName(
-        'weather__app-wrapper'
+        'weather__app-wrapper',
       )[0];
       wrapper.appendChild(cityNotFound());
     });

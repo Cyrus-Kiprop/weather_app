@@ -31,6 +31,9 @@
   "dependencies": {
     "bootstrap": "^4.5.0",
     "file-loader": "^6.0.0",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
     "uuid": "^8.2.0"
   }
 }

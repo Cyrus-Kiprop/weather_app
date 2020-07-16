@@ -2,6 +2,24 @@ import utils from '../UxUtils';
 
 const { make, appendBulkChild } = utils;
 
+const updateBackground = (weather) => {
+  const element = document.getElementsByClassName('today__weather-wrapper')[0];
+
+  const arr = ['clouds', 'rainy', 'sunny'];
+  arr.forEach((weatherClass) => {
+    element.classList.remove(weatherClass);
+  });
+  if (weather.toLowerCase() === 'clouds') {
+    element.classList.add('clouds');
+  }
+  if (weather.toLowerCase() === 'rain') {
+    element.classList.add('rainy');
+  }
+  if (weather.toLowerCase() === 'clear') {
+    element.classList.add('sunny');
+  }
+};
+
 function todaysTemp(temp, weatherDesc) {
   updateBackground(weatherDesc);
   const tempWrapper = make('div', 'temp-container d-flex flex-column');
@@ -24,26 +42,5 @@ function todaysTemp(temp, weatherDesc) {
   appendBulkChild(tempWrapper, [tempCelsius, tempFahrenheit, weatherDes]);
   return tempWrapper;
 }
-
-const updateBackground = (weather) => {
-  const element = document.getElementsByClassName('today__weather-wrapper')[0];
-
-  const weatherIcon = document.getElementsByClassName('temp-icon')[0];
-  console.log(weatherIcon);
-
-  const arr = ['clouds', 'rainy', 'sunny'];
-  arr.forEach((weatherClass) => {
-    element.classList.remove(weatherClass);
-  });
-  if (weather.toLowerCase() === 'clouds') {
-    element.classList.add('clouds');
-  }
-  if (weather.toLowerCase() === 'rain') {
-    element.classList.add('rainy');
-  }
-  if (weather.toLowerCase() === 'clear') {
-    element.classList.add('sunny');
-  }
-};
 
 export default todaysTemp;

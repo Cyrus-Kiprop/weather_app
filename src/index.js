@@ -7,4 +7,3 @@ import fetchDetails from './components/fetchData';
 fetchDetails();
 
 document.getElementById('root').appendChild(container);
-console.log('hello the app is running');

@@ -2,8 +2,7 @@ import utils from '../UxUtils';
 
 const { make, appendBulkChild } = utils;
 
-const handleToggle = (event) => {
-  const { target } = event;
+const handleToggle = () => {
   const tempValue = document.getElementsByClassName('temp-value');
   const highLow = document.getElementsByClassName('stats-temp');
 
