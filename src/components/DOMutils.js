@@ -12,7 +12,7 @@ const DOMutils = {
         main.humidity,
         main.pressure,
         main.temp_max,
-        main.temp_min
+        main.temp_min,
       ),
       cityForm(),
       toggle(),

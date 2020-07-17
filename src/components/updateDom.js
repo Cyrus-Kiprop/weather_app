@@ -10,7 +10,9 @@ const { weatherStatistics } = DOMutils;
 const { resetPage } = apiUtils;
 
 function updateDOM(dataObj) {
-  const { main, sys, wind, weather, name, dt } = dataObj;
+  const {
+    main, sys, wind, weather, name, dt,
+  } = dataObj;
   const data = {
     main,
     sys,
@@ -26,11 +28,11 @@ function updateDOM(dataObj) {
 
   // update the UI
   const todayWrapper = document.getElementsByClassName(
-    'today__weather-wrapper'
+    'today__weather-wrapper',
   )[0];
 
   const statsWrapper = document.getElementsByClassName(
-    'stats__weather-wrapper'
+    'stats__weather-wrapper',
   )[0];
 
   resetPage([todayWrapper, statsWrapper]);

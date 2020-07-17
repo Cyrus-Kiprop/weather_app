@@ -13,7 +13,7 @@ function fetchDetails(cityName = 'Nairobi') {
     .then((result) => updateDOM(result))
     .catch(() => {
       const wrapper = document.getElementsByClassName(
-        'weather__app-wrapper'
+        'weather__app-wrapper',
       )[0];
       wrapper.appendChild(cityNotFound());
     });
