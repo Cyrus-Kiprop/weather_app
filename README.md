@@ -50,12 +50,9 @@ The app is built using native javascript api for manipulating the DOM. The main 
 Home (Landing Page)
 ```
 
-- This is also the landing page.
-  ![](./src/assets/images/)
-
 ## Live Demo
 
-Click [ here ](https://raw.githack.com/Cyrus-Kiprop/restaurant_page/gh-pages/index.html) for a live demo of the app.
+Click [ here ](https://competent-meninsky-0f80cf.netlify.app/) for a live demo of the app.
 
 ### Built With
 
